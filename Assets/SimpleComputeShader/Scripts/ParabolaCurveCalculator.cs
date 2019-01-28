@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Yucchiy.Sandbox.SimpleComputeShader
 {
-    public class  ParabolaCurveCalculator : MonoBehaviour
+    public class ParabolaCurveCalculator : MonoBehaviour
     {
         public ComputeShader Shader;
         public float a, p, q;
