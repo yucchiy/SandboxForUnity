@@ -157,8 +157,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 1
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -184,7 +184,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551913923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -217,9 +217,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49cddce9e98e54f6daf2d00192a34403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleCount: 1000000
+  _particleCount: 400000
   _material: {fileID: 2100000, guid: 0ff0f4d9779f24f4ea011f98e506e8bb, type: 2}
   _simulationShader: {fileID: 7200000, guid: a00ac1323525e45e581b3a56cf3df0b1, type: 3}
+  _particleSpeed: 0.05
+  _particleLifeTime: 10
+  _isPlaying: 0
+  _needReset: 0
 --- !u!4 &986922260
 Transform:
   m_ObjectHideFlags: 0
@@ -227,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 986922258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
