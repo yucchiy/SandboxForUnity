@@ -87,6 +87,7 @@ namespace Yucchiy.Sandbox.ComputeShaderParticleSystem
         {
             _simulationShader.SetFloat("deltaTime", deltaTime);
             _simulationShader.SetFloat("particleSpeed", _particleSpeed);
+            _simulationShader.SetFloats("externalForce", new float[]{_externalForce.x, _externalForce.y, _externalForce.z});
             _simulationShader.Dispatch(
                 _simulationShaderKernelId,
                 Mathf.CeilToInt((float)_particleCount / 256),
@@ -121,6 +122,8 @@ namespace Yucchiy.Sandbox.ComputeShaderParticleSystem
         private bool _isPlaying = false;
         [SerializeField]
         private bool _needReset = false;
+        [SerializeField]
+        private Vector3 _externalForce = Vector3.zero;
 
         ComputeBuffer _particleBuffer;
         private int _simulationShaderKernelId;

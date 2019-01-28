@@ -4,7 +4,7 @@
 
 float deltaTime;
 float particleSpeed;
-float3 mouse;
+float3 externalForce;
 
 struct Particle
 {
@@ -50,5 +50,6 @@ float3 CurlNoise(float3 p)
 void SimulateParticle(uint3 id : SV_DispatchThreadID)
 {
     particleBuffer[id.x].lifeTime -= deltaTime;
-    particleBuffer[id.x].position += CurlNoise(particleBuffer[id.x].position) * particleSpeed;
+    particleBuffer[id.x].position +=
+        CurlNoise(particleBuffer[id.x].position) * particleSpeed + externalForce * deltaTime;
 }
